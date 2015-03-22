@@ -20,5 +20,7 @@ sh ~/.dotfiles/bin/install
 
 ## Aliases
 **o**: xdg-open .
+
 **s**: sudo
+
 **sl**: Runs the last command with sudo.
