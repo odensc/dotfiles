@@ -8,7 +8,7 @@ antigen bundle git
 antigen bundle npm
 
 # theme
-antigen theme avit
+antigen theme blinks
 
 # apply plugins
 antigen apply
