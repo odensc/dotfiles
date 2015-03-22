@@ -1,0 +1,32 @@
+#!/bin/sh
+# http://stackoverflow.com/a/23905052
+DIR=$(readlink -f $(dirname "$0"))
+# http://stackoverflow.com/a/3232082
+confirm()
+{
+	# call with a prompt string or use a default
+	read -r -p "${1:-Are you sure? [y/N]} " response
+	case $response in
+		[yY][eE][sS]|[yY])
+			true
+			;;
+		*)
+			false
+			;;
+	esac
+}
+
+echo "> Checking if you have zsh installed..."
+if [ ! -f `which zsh` ]
+then
+	if confirm "> zsh not installed! Would you like to install it? [y/n]"
+	then
+		sudo apt-get install zsh
+	else
+		echo "> Can't continue without zsh! Exiting."
+		exit 1
+	fi
+fi
+
+echo "> zsh is installed. Continuing..."
+sh $DIR/_install

@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+DOTFILES=$HOME/.dotfiles
+
+echo "> Symlinking files..."
+rm -f ~/.zshrc
+ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
+
+echo "> Downloading antigen..."
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
+
+echo "> Installing / updating nvm..."
+curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
+. $DOTFILES/zsh/nvm.zsh
+
+echo "> Setting up io.js..."
+nvm install iojs
+nvm alias default iojs
+
+echo "> Done! Restart your terminal and have fun."
