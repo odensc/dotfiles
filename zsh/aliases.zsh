@@ -1,6 +1,6 @@
 # aliases
-# opens current directory in file browser
-alias o="xdg-open ."
+# quick xdg-open with no output
+alias o="xdg-open "$@" > /dev/null 2> /dev/null"
 # quick sudo
 alias s="sudo"
 # run last command with sudo

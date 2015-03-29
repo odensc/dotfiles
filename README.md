@@ -19,7 +19,7 @@ sh ~/.dotfiles/bin/install
 ```
 
 ## Aliases
-**o**: xdg-open .
+**o**: xdg-open (args) > /dev/null
 
 **s**: sudo
 
