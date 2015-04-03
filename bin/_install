@@ -4,7 +4,6 @@ DOTFILES=$HOME/.dotfiles
 
 echo "> Symlinking files..."
 rm -f ~/.zshrc
-ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
 
 echo "> Downloading antigen..."
 curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
@@ -12,6 +11,8 @@ curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh >
 echo "> Installing / updating nvm..."
 curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
 . $DOTFILES/zsh/nvm.zsh
+# re-symlink zshrc incase nvm added source string to it
+ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
 
 echo "> Setting up io.js..."
 nvm install iojs
