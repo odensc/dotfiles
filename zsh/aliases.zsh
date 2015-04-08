@@ -4,4 +4,4 @@ alias o="xdg-open "$@" > /dev/null 2> /dev/null"
 # quick sudo
 alias s="sudo"
 # run last command with sudo
-alias sl='sudo $(fc -ln -1)'
+alias sl='sudo zsh -c "$(fc -ln -1)"'
