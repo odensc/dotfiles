@@ -10,7 +10,6 @@ else
 	cd $DOTFILES && git pull
 fi
 echo "> Symlinking files..."
-rm -f ~/.zshrc
 ln -sf $DOTFILES/zsh/.zshrc ~/.zshrc
 
 echo "> Downloading antigen..."
