@@ -1,5 +1,5 @@
 # load antigen
-source ~/.antigen.zsh
+source ~/.dotfiles/antigen/antigen.zsh
 
 # plugins
 antigen use oh-my-zsh

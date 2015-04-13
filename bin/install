@@ -1,32 +1,28 @@
-#!/bin/sh
-# http://stackoverflow.com/a/23905052
-DIR=$(readlink -f $(dirname "$0"))
-# http://stackoverflow.com/a/3232082
-confirm()
-{
-	# call with a prompt string or use a default
-	read -r -p "${1:-Are you sure? [y/N]} " response
-	case $response in
-		[yY][eE][sS]|[yY])
-			true
-			;;
-		*)
-			false
-			;;
-	esac
-}
+#!/bin/zsh
 
-echo "> Checking if you have zsh installed..."
-if [ ! -f `which zsh` ]
+DOTFILES=$HOME/.dotfiles
+
+echo "> Downloading dotfiles from git..."
+if [ ! -d "$DOTFILES" ]
 then
-	if confirm "> zsh not installed! Would you like to install it? [y/n]"
-	then
-		sudo apt-get install zsh
-	else
-		echo "> Can't continue without zsh! Exiting."
-		exit 1
-	fi
+	git clone https://github.com/thesbros/dotfiles.git $DOTFILES
+else
+	cd $DOTFILES && git pull
 fi
+echo "> Symlinking files..."
+rm -f ~/.zshrc
+ln -sf $DOTFILES/zsh/.zshrc ~/.zshrc
 
-echo "> zsh is installed. Continuing..."
-sh $DIR/_install
+echo "> Downloading antigen..."
+mkdir -p $DOTFILES/antigen
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $DOTFILES/antigen/antigen.zsh
+
+echo "> Downloading nvm..."
+curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | zsh > /dev/null
+. $DOTFILES/zsh/nvm.zsh
+
+echo "> Downloading io.js..."
+nvm install iojs
+nvm alias default iojs
+
+echo "> Done! Restart your terminal and have fun."

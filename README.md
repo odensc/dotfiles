@@ -1,29 +1,17 @@
 # dotfiles
 My dotfiles.
 
-Only supports Linux right now.
+Only supports Linux.
 
 ## Usage
-You must have git installed.
+You must have git and zsh installed.
 
 **Installing WILL remove your old .zshrc! Move it if you want to keep it!**
 ```bash
-# clone repo
-git clone https://github.com/thesbros/dotfiles.git ~/.dotfiles
-
-# install
-sh ~/.dotfiles/bin/install
-
-# you can update the same way!
-# sh ~/.dotfiles/bin/install
+# install, you can also update the same way
+# updating will destroy any of your changes though
+curl https://raw.githubusercontent.com/thesbros/dotfiles/master/bin/install | zsh
 ```
-
-## Edits
-Some things you might want to change:
-* Change my environment variables in zsh/env.zsh
-* Add your own aliases in zsh/aliases.zsh
-* Change some misc. things in zsh/misc.zsh
-* Add / change plugins and themes in zsh/plugins.zsh
 
 ## Aliases
 **o**: xdg-open (args) > /dev/null
