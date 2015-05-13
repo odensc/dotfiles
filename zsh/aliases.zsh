@@ -16,13 +16,11 @@ function confirm()
 function rm()
 {
 	if confirm "Use trash?"; then
-		trash "$@"
+		trash-put "$@"
 	else
 		/bin/rm "$@"
 	fi
 }
-# use apt-fast
-alias apt-get="apt-fast"
 # use pacaur
 alias pacman="pacaur"
 # quick xdg-open with no output
