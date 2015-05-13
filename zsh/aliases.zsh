@@ -1,8 +1,25 @@
+function confirm()
+{
+	read -r "response?${1:-Are you sure?} [Y/n] "
+	case $response in
+		[nN][oO]|[nN])
+			false
+			;;
+		*)
+			true
+			;;
+	esac
+}
+
 # aliases
-# don't use rm, is dangerous
+# ask to use trash
 function rm()
 {
-	echo "use trash"
+	if confirm "Use trash?"; then
+		trash "$@"
+	else
+		/bin/rm "$@"
+	fi
 }
 # use apt-fast
 alias apt-get="apt-fast"
@@ -14,3 +31,5 @@ alias o="xdg-open "$@" > /dev/null 2> /dev/null"
 alias s="sudo"
 # run last command with sudo
 alias sl='sudo zsh -c "$(fc -ln -1)"'
+# open editor
+alias edit="$EDITOR"

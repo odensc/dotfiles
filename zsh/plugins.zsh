@@ -8,7 +8,7 @@ antigen bundle git
 antigen bundle npm
 
 # theme
-antigen theme blinks
+antigen bundle sindresorhus/pure
 
 # apply plugins
 antigen apply
