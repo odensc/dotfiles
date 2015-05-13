@@ -20,6 +20,8 @@ curl https://raw.githubusercontent.com/thesbros/dotfiles/master/bin/install | zs
 
 **sl**: Runs the last command with sudo.
 
+**edit**: $EDITOR
+
 **pacman**: Aliased to 
 [pacaur](https://wiki.archlinux.org/index.php/Pacaur).
 
