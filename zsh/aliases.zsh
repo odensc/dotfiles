@@ -1,26 +1,3 @@
-function confirm()
-{
-	read -r "response?${1:-Are you sure?} [Y/n] "
-	case $response in
-		[nN][oO]|[nN])
-			false
-			;;
-		*)
-			true
-			;;
-	esac
-}
-
-# aliases
-# ask to use trash
-function rm()
-{
-	if confirm "Use trash?"; then
-		trash-put "$@"
-	else
-		/bin/rm "$@"
-	fi
-}
 # use pacaur
 alias pacman="pacaur"
 # quick xdg-open with no output
