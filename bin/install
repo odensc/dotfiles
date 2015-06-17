@@ -13,6 +13,7 @@ echo "> Symlinking files..."
 ln -sf $DOTFILES/zsh/.zshrc ~/.zshrc
 
 echo "> Downloading antigen..."
+rm -rf $DOTFILES/antigen
 mkdir -p $DOTFILES/antigen
 curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $DOTFILES/antigen/antigen.zsh
 
