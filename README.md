@@ -19,11 +19,3 @@ curl https://raw.githubusercontent.com/thesbros/dotfiles/master/bin/install | zs
 **s**: sudo
 
 **sl**: Runs the last command with sudo.
-
-**edit**: $EDITOR
-
-**pacman**: Aliased to 
-[pacaur](https://wiki.archlinux.org/index.php/Pacaur).
-
-**rm**: Confirms that you want to use rm, and not 
-[trash](https://github.com/andreafrancia/trash-cli).
