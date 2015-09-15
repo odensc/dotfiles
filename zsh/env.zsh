@@ -1,4 +1,4 @@
-# env vars
-# set antigen folder
-export ADOTDIR="$HOME/.dotfiles/antigen"
+export DOTFILES="$HOME/.dotfiles"
+export ZGEN_DIR="$DOTFILES/zgen/dir"
+# set nano as default editor
 export EDITOR="nano"

@@ -8,10 +8,13 @@ You must have git and zsh installed.
 
 **Installing WILL remove your old .zshrc! Move it if you want to keep it!**
 ```bash
-# install, you can also update the same way
-# updating will destroy any of your changes though
-curl https://raw.githubusercontent.com/thesbros/dotfiles/master/bin/install | zsh
+# to install:
+curl https://raw.githubusercontent.com/thesbros/dotfiles/master/bin/setup | zsh
+# to update from repo, update plugins, etc.:
+zsh $DOTFILES/bin/setup
 ```
+
+You can put any custom environment variables, etc. in `zsh/custom.zsh` - or just fork it!
 
 ## Aliases
 **o**: xdg-open (args) > /dev/null

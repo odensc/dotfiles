@@ -1,14 +1,18 @@
-# load antigen
-source ~/.dotfiles/antigen/antigen.zsh
+# load zgen
+source "$DOTFILES/zgen/zgen.zsh"
 
-# plugins
-antigen use oh-my-zsh
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
+if ! zgen saved; then
+	# plugins
+	zgen oh-my-zsh
+	zgen load zsh-users/zsh-syntax-highlighting
+	zgen load zsh-users/zsh-history-substring-search
+	zgen load rimraf/k
 
+	# save to init script
+	zgen save
+fi
+
+# bind up/down to substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# apply plugins
-antigen apply
