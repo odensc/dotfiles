@@ -4,6 +4,8 @@ export DOTFILES="$HOME/.dotfiles"
 echo "> Getting dotfiles..."
 ! test -d "$DOTFILES" && git clone https://github.com/thesbros/dotfiles.git $DOTFILES
 cd $DOTFILES && git pull
+git submodule update --init
+git submodule update --remote
 source "$DOTFILES/zsh/env.zsh"
 
 echo "> Symlinking files..."
