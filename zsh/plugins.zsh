@@ -3,9 +3,10 @@ source "$DOTFILES/zgen/zgen.zsh"
 
 if ! zgen saved; then
 	# plugins
+	zgen oh-my-zsh
 	zgen load zsh-users/zsh-syntax-highlighting
 	zgen load zsh-users/zsh-history-substring-search
-	zgen load rimraf/k
+	zgen load supercrabtree/k
 
 	# save to init script
 	zgen save
