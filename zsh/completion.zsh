@@ -1,6 +1,6 @@
 # source: https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
 autoload -U compinit
-compinit -d "$HOME/.cache/zcompdump"
+compinit -d "$ZSH_CACHE_DIR/zcompdump"
 zmodload -i zsh/complist
 
 unsetopt menu_complete # do not autoselect the first completion entry
@@ -21,6 +21,6 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 
 # use caching
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR/completion"
 
 zstyle '*' single-ignored show

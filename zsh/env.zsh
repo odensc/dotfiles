@@ -2,9 +2,11 @@
 export DOTFILES="$HOME/.dotfiles"
 export NVM_DIR="$DOTFILES/nvm"
 export ZPLUG_HOME="$DOTFILES/zplug-home"
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 # history
-export HISTFILE=~/.cache/zsh_history
+export HISTFILE="$ZSH_CACHE_DIR/history"
+export HISTSIZE=200
 export SAVEHIST=200
 
 # set nano as default editor

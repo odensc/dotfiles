@@ -1,11 +1,15 @@
 #!/bin/zsh
 export DOTFILES="$HOME/.dotfiles"
+source $DOTFILES/zsh/env.zsh
 
 echo "> Getting dotfiles..."
 ! test -d "$DOTFILES" && git clone https://github.com/thesbros/dotfiles.git $DOTFILES
 cd $DOTFILES && git pull
+git submodule update --init
+git submodule update --remote
 
 echo "> Symlinking files..."
 ln -sf $DOTFILES/zsh/.zshrc ~/.zshrc
+mkdir -p $ZSH_CACHE_DIR
 
 echo "> Done! Restart your terminal to see changes."
