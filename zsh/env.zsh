@@ -6,8 +6,8 @@ export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 # history
 export HISTFILE="$ZSH_CACHE_DIR/history"
-export HISTSIZE=200
-export SAVEHIST=200
+export HISTSIZE=2000
+export SAVEHIST=$HISTSIZE
 
 # set nano as default editor
 export EDITOR="nano"
