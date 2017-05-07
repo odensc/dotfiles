@@ -12,4 +12,6 @@ echo "> Symlinking files..."
 ln -sf $DOTFILES/zsh/.zshrc ~/.zshrc
 mkdir -p $ZSH_CACHE_DIR
 
+zplug update
+
 echo "> Done! Restart your terminal to see changes."
