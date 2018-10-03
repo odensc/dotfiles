@@ -7,6 +7,6 @@ PROMPT="%{$fg[blue]%}${PWD/$HOME/~}%{$reset_color%}
 # update prompt after executing commands
 precmd()
 {
-	PROMPT="%{$fg[blue]%}${PWD/$HOME/~}%{$reset_color%}$in_ssh_1
+	PROMPT="%{$fg[blue]%}${PWD/$HOME/~}%{$fg[cyan]%}$in_ssh_1
 %{$fg[red]%}$in_ssh_2%{$reset_color%}— "
 }
