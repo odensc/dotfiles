@@ -1,9 +1,10 @@
 #!/bin/zsh
 export DOTFILES="$HOME/.dotfiles"
-source $DOTFILES/zsh/env.zsh
 
 echo "> Getting dotfiles..."
 ! test -d "$DOTFILES" && git clone https://github.com/thesbros/dotfiles.git $DOTFILES
+source $DOTFILES/zsh/env.zsh
+
 cd $DOTFILES && git pull
 git submodule update --init
 git submodule update --remote
