@@ -4,7 +4,5 @@ alias o="xdg-open "$@" >/dev/null 2>/dev/null"
 alias s="sudo"
 # run last command with sudo
 alias sl='sudo zsh -c "$(fc -ln -1)"'
-# use human readable sizes and show hidden files in k
-alias k="k -ha"
 # use colors in ls
 alias ls="ls --color=auto"
